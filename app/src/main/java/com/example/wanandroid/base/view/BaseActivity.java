@@ -15,6 +15,8 @@ import com.example.wanandroid.base.view.inter.IMvpView;
 import com.github.zackratos.ultimatebar.UltimateBar;
 import com.hongfans.common.log.LogUtil;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Golden on 2018/2/26.
  */
@@ -29,8 +31,11 @@ public abstract class BaseActivity<P extends BasePresenter,V extends IMvpView> e
         super.onCreate(savedInstanceState);
         init();
         setContentView(getLayoutId());
+        ButterKnife.bind(this);
         mPresenter = onCreatePresenter();
-        mPresenter.attachView(((V) this));
+        if (mPresenter!=null){
+            mPresenter.attachView(((V) this));
+        }
         initBarColor();//初始化状态栏/导航栏颜色，需在设置了布局后再调用
         initView();//由具体的activity实现，做视图相关的初始化
         loadData();//由具体的activity实现，做数据的初始化

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import com.example.wanandroid.base.presenter.BasePresenter;
 import com.example.wanandroid.base.view.inter.IMvpView;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Golden on 2018/2/26.
  */
@@ -43,8 +45,11 @@ public abstract class BaseFragment<P extends BasePresenter ,V extends IMvpView> 
         if (mRootView ==null){
             mRootView = LayoutInflater.from(mContext).inflate(getFragmentLayoutId(), container, false);
         }
+        ButterKnife.bind(this,mRootView);
         mPresenter = oncreatePresenter();
-        mPresenter.attachView(((V) this));
+        if (mPresenter!=null){
+            mPresenter.attachView(((V) this));
+        }
         return mRootView;
 
     }

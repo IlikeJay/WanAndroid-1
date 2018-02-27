@@ -7,12 +7,11 @@ import android.support.v7.app.AppCompatActivity;
  */
 
 public abstract class AbstractActivity extends AppCompatActivity {
-
     /**
-     * 设置布局
+     * 获取布局id
+     * @return
      */
-    protected abstract void setContentLayout();
-
+    protected abstract int getLayoutId();
     /**
      * 初始化控件
      */
@@ -21,7 +20,7 @@ public abstract class AbstractActivity extends AppCompatActivity {
     /**
      * 加载数据
      */
-    protected abstract void obtainData();
+    protected abstract void loadData();
 
     /**
      * 初始化监听

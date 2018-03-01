@@ -12,4 +12,8 @@
     <string name="collection_cancel_failed">取消收藏失败</string>
     <string name="collection_success">收藏成功</string>
     <string name="collection_failed">收藏失败</string>
+    <string name="share_title">分享</string>
+    <string name="like_title">收藏</string>
+    <string name="browser_title">用浏览器打开</string>
+    <string name="share_article_url">%1$s分享【%2$s】：%3$s</string>
 </resources>

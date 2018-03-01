@@ -17,6 +17,7 @@ import com.example.wanandroid.constant.Constant;
 import com.example.wanandroid.constant.LoadType;
 import com.example.wanandroid.event.LoginEvent;
 import com.example.wanandroid.ui.article.ArticleAdapter;
+import com.example.wanandroid.ui.article.ArticleContentActivity;
 import com.example.wanandroid.utils.GlideImageLoader;
 import com.example.wanandroid.utils.RxBus;
 import com.youth.banner.BannerConfig;
@@ -141,9 +142,8 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
 
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-//        ArticleContentActivity.start(mArticleAdapter.getItem(position).getId(),
-//                mArticleAdapter.getItem(position).getLink(), mArticleAdapter.getItem(position).getTitle(),
-//                mArticleAdapter.getItem(position).getAuthor());
+        Article.DatasBean item = mArticleAdapter.getItem(position);
+        ArticleContentActivity.start(item.getId(),item.getLink(),item.getTitle(),item.getAuthor());
     }
 
     @Override

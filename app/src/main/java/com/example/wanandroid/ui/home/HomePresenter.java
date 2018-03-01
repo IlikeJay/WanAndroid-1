@@ -53,7 +53,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        mView.showFaild(throwable.getMessage());
+                        mView.showFailed(throwable.getMessage());
                     }
                 });
     }
@@ -102,6 +102,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
                         .compose(RxSchedulers.<DataResponse>applySchedulers())
                         .compose(mView.<DataResponse>bindToLife())
                         .subscribe(new Consumer<DataResponse>() {
+                            @SuppressLint("StringFormatInvalid")
                             @Override
                             public void accept(DataResponse response) throws Exception {
                                 if (response.getErrorCode() == 0) {
@@ -109,13 +110,13 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
                                     mView.collectArticleSuccess(position, bean);
                                     mView.showSuccess(App.getAppContext().getString(R.string.collection_cancel_success));
                                 } else {
-                                    mView.showFaild(App.getAppContext().getString(R.string.collection_cancel_failed, response.getData()));
+                                    mView.showFailed(App.getAppContext().getString(R.string.collection_cancel_failed, response.getData()));
                                 }
                             }
                         }, new Consumer<Throwable>() {
                             @Override
                             public void accept(Throwable throwable) throws Exception {
-                                mView.showFaild(throwable.getMessage());
+                                mView.showFailed(throwable.getMessage());
                             }
                         });
             } else {
@@ -131,13 +132,13 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
                                     mView.collectArticleSuccess(position, bean);
                                     mView.showSuccess(App.getAppContext().getString(R.string.collection_success));
                                 } else {
-                                    mView.showFaild(App.getAppContext().getString(R.string.collection_failed, response.getErrorMsg()));
+                                    mView.showFailed(App.getAppContext().getString(R.string.collection_failed, response.getErrorMsg()));
                                 }
                             }
                         }, new Consumer<Throwable>() {
                             @Override
                             public void accept(Throwable throwable) throws Exception {
-                                mView.showFaild(throwable.getMessage());
+                                mView.showFailed(throwable.getMessage());
                             }
                         });
             }
@@ -170,7 +171,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
                 if (dataResponse.getErrorCode() == 0) {
                     mView.showSuccess(App.getAppContext().getString(R.string.auto_login_success));
                 } else {
-                    mView.showFaild(String.valueOf(dataResponse.getErrorMsg()));
+                    mView.showFailed(String.valueOf(dataResponse.getErrorMsg()));
                 }
                 List<Banner> banners = (List<Banner>) map.get(Constant.BANNER_KEY);
                 Article article = (Article) map.get(Constant.ARTICLE_KEY);
@@ -180,7 +181,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View> implements H
         }, new Consumer<Throwable>() {
             @Override
             public void accept(Throwable throwable) throws Exception {
-                mView.showFaild(throwable.getMessage());
+                mView.showFailed(throwable.getMessage());
             }
         });
     }

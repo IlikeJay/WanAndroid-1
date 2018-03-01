@@ -6,6 +6,7 @@ import android.content.Context;
 import com.example.wanandroid.di.module.ActivityModule;
 import com.example.wanandroid.di.scope.ContextLife;
 import com.example.wanandroid.di.scope.PerActivity;
+import com.example.wanandroid.ui.article.ArticleContentActivity;
 
 import dagger.Component;
 
@@ -28,7 +29,7 @@ public interface ActivityComponent {
 //
 //    void inject(LoginActivity activity);
 //
-//    void inject(ArticleContentActivity activity);
+    void inject(ArticleContentActivity activity);
 //
 //    void inject(MyCollectionActivity activity);
 //

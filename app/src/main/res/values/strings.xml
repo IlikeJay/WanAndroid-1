@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">WanAndroid</string>
+    <string name="title_home">主页</string>
+    <string name="title_knowledgesystem">知识体系</string>
+    <string name="title_my">个人</string>
 </resources>

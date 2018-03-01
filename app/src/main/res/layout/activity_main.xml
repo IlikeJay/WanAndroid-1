@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.wanandroid.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.wanandroid.homepage.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <com.qmuiteam.qmui.widget.QMUITopBarLayout
+            app:qmui_topbar_separator_color="@color/qmui_config_color_separator"
+           app:qmui_topbar_separator_height="2dp"
+           app:qmui_topbar_bg_color="#fff"
+           app:qmui_topbar_need_separator="true"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <com.qmuiteam.qmui.widget.QMUITopBar
+               android:id="@+id/topbar"
+               app:qmui_topbar_separator_color="@color/qmui_config_color_separator"
+               app:qmui_topbar_separator_height="2dp"
+               app:qmui_topbar_bg_color="#fff"
+               app:qmui_topbar_need_separator="true"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"></com.qmuiteam.qmui.widget.QMUITopBar>
+       </com.qmuiteam.qmui.widget.QMUITopBarLayout>
+        <com.qmuiteam.qmui.widget.QMUIViewPager
+            android:id="@+id/vp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </com.qmuiteam.qmui.widget.QMUIViewPager>
+       <com.qmuiteam.qmui.widget.QMUITabSegment
+           android:id="@+id/tabseg"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:qmui_tab_has_indicator="true"
+           app:qmui_tab_indicator_height="@dimen/qmui_tab_segment_indicator_height"
+           app:qmui_tab_indicator_top="false"/>
 
-</LinearLayout>
+   </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

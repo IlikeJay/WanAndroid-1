@@ -3,12 +3,9 @@ package com.example.wanandroid.base.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.view.Window;
 
 import com.bumptech.glide.Glide;
 import com.example.wanandroid.R;
@@ -17,6 +14,8 @@ import com.example.wanandroid.base.util.ActivityStackManager;
 import com.example.wanandroid.base.view.inter.IMvpView;
 import com.github.zackratos.ultimatebar.UltimateBar;
 import com.hongfans.common.log.LogUtil;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by Golden on 2018/2/26.
@@ -32,11 +31,14 @@ public abstract class BaseActivity<P extends BasePresenter,V extends IMvpView> e
         super.onCreate(savedInstanceState);
         init();
         setContentView(getLayoutId());
+        ButterKnife.bind(this);
         mPresenter = onCreatePresenter();
-        mPresenter.attachView(((V) this));
+        if (mPresenter!=null){
+            mPresenter.attachView(((V) this));
+        }
         initBarColor();//初始化状态栏/导航栏颜色，需在设置了布局后再调用
         initView();//由具体的activity实现，做视图相关的初始化
-        obtainData();//由具体的activity实现，做数据的初始化
+        loadData();//由具体的activity实现，做数据的初始化
         initEvent();//由具体的activity实现，做事件监听的初始化
 
     }
@@ -161,7 +163,6 @@ public abstract class BaseActivity<P extends BasePresenter,V extends IMvpView> e
 
     public abstract P onCreatePresenter();
 
-    public abstract int getLayoutId();
 
     @Override
     public Context getActivityContext() {

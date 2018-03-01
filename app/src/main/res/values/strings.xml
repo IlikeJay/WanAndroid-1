@@ -3,4 +3,13 @@
     <string name="title_home">主页</string>
     <string name="title_knowledgesystem">知识体系</string>
     <string name="title_my">个人</string>
+    <string name="hot_title">hot</string>
+    <string name="search_title">Search</string>
+    <string name="no_network_connection">无网络连接</string>
+    <string name="exit_system">再点击一次退出系统</string>
+    <string name="auto_login_success">自动登陆成功</string>
+    <string name="collection_cancel_success">取消收藏成功</string>
+    <string name="collection_cancel_failed">取消收藏失败</string>
+    <string name="collection_success">收藏成功</string>
+    <string name="collection_failed">收藏失败</string>
 </resources>

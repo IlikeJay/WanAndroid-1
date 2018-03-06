@@ -71,8 +71,6 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
         View headView = getLayoutInflater().inflate(R.layout.head_history_search, null);
         mTagFlowLayout = (TagFlowLayout) headView.findViewById(R.id.tfl);
         mArticleAdapter.addHeaderView(headView);
-        mHistoryAdapter = new HistoryAdapter(this,historyModels);
-        mTagFlowLayout.setAdapter(mHistoryAdapter);
         initListener();
         mPresenter.loadHistory();
 
@@ -188,7 +186,9 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
     @Override
     public void refreshHistory(List<HistoryModel> historyModels) {
         this.historyModels = historyModels == null? new ArrayList<HistoryModel>(0):historyModels;
-        mHistoryAdapter.notifyDataChanged();
+        mHistoryAdapter = new HistoryAdapter(this,historyModels);
+        mTagFlowLayout.setAdapter(mHistoryAdapter);
+//        mHistoryAdapter.notifyDataChanged();
         mSwipeRefreshLayout.setRefreshing(false);
     }
 

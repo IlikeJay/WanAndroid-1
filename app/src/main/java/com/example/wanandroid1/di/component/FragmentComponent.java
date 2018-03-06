@@ -6,8 +6,11 @@ import android.content.Context;
 import com.example.wanandroid1.di.module.FragmentModule;
 import com.example.wanandroid1.di.scope.ContextLife;
 import com.example.wanandroid1.di.scope.PerFragment;
+import com.example.wanandroid1.ui.article.ArticleListFragment;
 import com.example.wanandroid1.ui.home.HomeFragment;
 import com.example.wanandroid1.ui.hot.HotFragment;
+import com.example.wanandroid1.ui.konwledge.KnowledgeSystemFragment;
+import com.example.wanandroid1.ui.my.MyFragment;
 
 import dagger.Component;
 
@@ -27,11 +30,11 @@ public interface FragmentComponent {
 
     void inject(HomeFragment fragment);
 //
-//    void inject(KnowledgeSystemFragment fragment);
+    void inject(KnowledgeSystemFragment fragment);
 //
-//    void inject(MyFragment fragment);
+    void inject(MyFragment fragment);
 //
-//    void inject(ArticleListFragment fragment);
+    void inject(ArticleListFragment fragment);
 //
     void inject(HotFragment fragment);
 }

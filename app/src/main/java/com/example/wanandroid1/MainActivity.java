@@ -14,6 +14,8 @@ import com.example.wanandroid1.base.BaseActivity;
 import com.example.wanandroid1.base.BaseFragment;
 import com.example.wanandroid1.ui.home.HomeFragment;
 import com.example.wanandroid1.ui.hot.HotFragment;
+import com.example.wanandroid1.ui.konwledge.KnowledgeSystemFragment;
+import com.example.wanandroid1.ui.my.MyFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +84,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menuHot) {
             mToolbar.setTitle(R.string.hot_title);
-            switchFragment(1);
+            switchFragment(3);
         } else if (item.getItemId() == R.id.menuSearch) {
             ARouter.getInstance().build("/search/SearchActivity").navigation();
         }
@@ -109,8 +111,8 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private void initFragment() {
         mFragments = new ArrayList<>();
         mFragments.add(HomeFragment.newInstance());
-//        mFragments.add(KnowledgeSystemFragment.newInstance());
-//        mFragments.add(MyFragment.newInstance());
+        mFragments.add(KnowledgeSystemFragment.newInstance());
+        mFragments.add(MyFragment.newInstance());
         mFragments.add(HotFragment.newInstance());
     }
 

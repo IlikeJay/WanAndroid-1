@@ -21,11 +21,12 @@ import io.reactivex.functions.Consumer;
  * Created by Golden on 2018/3/1.
  */
 
-class ArticleContentPresenter extends BasePresenter<ArticleContact.View> {
+class ArticleContentPresenter extends BasePresenter<ArticleContentContact.View> implements ArticleContentContact.Presenter{
     @Inject
     public ArticleContentPresenter() {
     }
 
+    @Override
     public void collectOutsideArticle(String title, String author, String url) {
         if (SPUtils.getInstance(Constant.SHARED_NAME).getBoolean(Constant.LOGIN_KEY)){
             RetrofitManager.create(ApiService.class).addCollectOutsideArticle(title,author,url).compose(RxSchedulers.<DataResponse>applySchedulers()).compose(mView.<DataResponse>bindToLife()).subscribe(new Consumer<DataResponse>() {
@@ -50,6 +51,7 @@ class ArticleContentPresenter extends BasePresenter<ArticleContact.View> {
         }
     }
 
+    @Override
     public void collectArticle(int id) {
         if (SPUtils.getInstance(Constant.SHARED_NAME).getBoolean(Constant.LOGIN_KEY)){
             RetrofitManager.create(ApiService.class).addCollectArticle(id).compose(RxSchedulers.<DataResponse>applySchedulers()).compose(mView.<DataResponse>bindToLife()).subscribe(new Consumer<DataResponse>() {

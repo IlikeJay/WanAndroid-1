@@ -21,7 +21,7 @@ import com.just.agentweb.ChromeClientCallbackManager;
 import butterknife.BindView;
 
 @Route(path = "/article/ArticleContentActivity")
-public class ArticleContentActivity extends BaseActivity<ArticleContentPresenter> {
+public class ArticleContentActivity extends BaseActivity<ArticleContentPresenter> implements ArticleContentContact.View{
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;

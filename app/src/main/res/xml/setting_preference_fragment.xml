@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="settingAutoUpdate"
+        android:summary="@string/setting_auto_update"
+        android:title="@string/auto_update" />
+    <Preference android:title="@string/check_update"
+        android:key="checkUpdate" />
+    <Preference android:title="@string/about"
+        android:key="about" />
+    <Preference android:title="@string/test_page"
+        android:key="testPage" />
+</PreferenceScreen>

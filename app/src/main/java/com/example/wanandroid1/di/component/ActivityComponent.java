@@ -7,7 +7,9 @@ import com.example.wanandroid1.di.module.ActivityModule;
 import com.example.wanandroid1.di.scope.ContextLife;
 import com.example.wanandroid1.di.scope.PerActivity;
 import com.example.wanandroid1.ui.article.ArticleContentActivity;
-import com.example.wanandroid1.ui.my.LoginActivity;
+import com.example.wanandroid1.ui.my.bookmark.BookMarkActivity;
+import com.example.wanandroid1.ui.my.collection.MyCollectionActivity;
+import com.example.wanandroid1.ui.my.login.LoginActivity;
 import com.example.wanandroid1.ui.search.SearchActivity;
 
 import dagger.Component;
@@ -33,7 +35,7 @@ public interface ActivityComponent {
 //
     void inject(ArticleContentActivity activity);
 //
-//    void inject(MyCollectionActivity activity);
+    void inject(MyCollectionActivity activity);
 //
-//    void inject(MyBookmarkActivity activity);
+    void inject(BookMarkActivity activity);
 }

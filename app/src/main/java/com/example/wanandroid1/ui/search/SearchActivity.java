@@ -179,13 +179,16 @@ public class SearchActivity extends BaseActivity<SearchPresenter> implements Sea
 
     @Override
     public void addHistorySuccess(HistoryModel historyModel) {
-        historyModels.add(0,historyModel);
-        mHistoryAdapter.notifyDataChanged();
+        if (historyModel!=null && mHistoryAdapter!=null){
+            historyModels.add(0,historyModel);
+            mHistoryAdapter.notifyDataChanged();
+        }
+
     }
 
     @Override
     public void refreshHistory(List<HistoryModel> historyModels) {
-        this.historyModels = historyModels == null? new ArrayList<HistoryModel>(0):historyModels;
+        this.historyModels = historyModels;
         mHistoryAdapter = new HistoryAdapter(this,historyModels);
         mTagFlowLayout.setAdapter(mHistoryAdapter);
 //        mHistoryAdapter.notifyDataChanged();

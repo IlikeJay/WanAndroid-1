@@ -10,7 +10,7 @@ import com.example.wanandroid1.bean.DataResponse;
 import com.example.wanandroid1.constant.Constant;
 import com.example.wanandroid1.net.ApiService;
 import com.example.wanandroid1.net.RetrofitManager;
-import com.example.wanandroid1.ui.my.LoginActivity;
+import com.example.wanandroid1.ui.my.login.LoginActivity;
 import com.example.wanandroid1.utils.RxSchedulers;
 
 import javax.inject.Inject;

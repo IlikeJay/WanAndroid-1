@@ -24,9 +24,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.article.ArticleContentActivity" />
-        <activity android:name=".ui.my.LoginActivity" />
-        <activity android:name=".ui.search.SearchActivity"></activity>
-        <activity android:name=".ui.article.ArticleTypeActivity"></activity>
+        <activity android:name=".ui.my.login.LoginActivity" />
+        <activity android:name=".ui.search.SearchActivity" />
+        <activity android:name=".ui.article.ArticleTypeActivity" />
+        <activity android:name=".ui.my.collection.MyCollectionActivity" />
+        <activity android:name=".ui.my.bookmark.BookMarkActivity" />
+        <activity android:name=".ui.my.setting.SettingActivity"></activity>
     </application>
 
 </manifest>

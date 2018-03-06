@@ -36,7 +36,7 @@ public class HistoryAdapter extends TagAdapter<HistoryModel> {
     @Override
     public View getView(FlowLayout parent, int position, HistoryModel model) {
         View view = LayoutInflater.from(context).inflate(R.layout.history_item, parent, false);
-        TextView tvTitle = (TextView) view.findViewById(R.id.tv_title);
+        TextView tvTitle = (TextView) view.findViewById(R.id.tvTitle);
         int parseColor = 0;
         try {
             tvTitle.setText(model.getName());

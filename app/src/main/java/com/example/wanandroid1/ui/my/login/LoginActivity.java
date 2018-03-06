@@ -1,4 +1,4 @@
-package com.example.wanandroid1.ui.my;
+package com.example.wanandroid1.ui.my.login;
 
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.Toolbar;
@@ -19,7 +19,7 @@ import com.example.wanandroid1.utils.RxBus;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-@Route(path = "/my/LoginActivity")
+@Route(path = "/login/LoginActivity")
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContact.View {
 
     @BindView(R.id.toolbar)
@@ -63,7 +63,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
 
     public static void start() {
-        ARouter.getInstance().build("/my/LoginActivity").navigation();
+        ARouter.getInstance().build("/login/LoginActivity").navigation();
     }
 
     @OnClick(R.id.bt_login)

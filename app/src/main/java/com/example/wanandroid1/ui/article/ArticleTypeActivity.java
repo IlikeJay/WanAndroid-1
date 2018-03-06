@@ -75,7 +75,7 @@ public class ArticleTypeActivity extends BaseActivity {
                     childrenData.get(tablayout.getSelectedTabPosition()).getName(), childrenData.get(tablayout.getSelectedTabPosition()).getId()));
             intent.setType("text/plain");
             startActivity(Intent.createChooser(intent, getString(R.string.share_title)));
-        } else if (itemId == R.id.menuShare) {
+        } else if (itemId == R.id.menuSearch) {
             ARouter.getInstance().build("/search/SearchActivity").navigation();
         }
         return super.onOptionsItemSelected(item);

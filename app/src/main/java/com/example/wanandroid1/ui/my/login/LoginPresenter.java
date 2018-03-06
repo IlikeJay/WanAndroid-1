@@ -1,4 +1,4 @@
-package com.example.wanandroid1.ui.my;
+package com.example.wanandroid1.ui.my.login;
 
 import com.example.wanandroid1.base.BasePresenter;
 import com.example.wanandroid1.bean.DataResponse;

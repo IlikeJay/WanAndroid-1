@@ -82,10 +82,11 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.menuHot) {
+        int itemId = item.getItemId();
+        if (itemId == R.id.menuHot) {
             mToolbar.setTitle(R.string.hot_title);
             switchFragment(3);
-        } else if (item.getItemId() == R.id.menuSearch) {
+        } else if (itemId == R.id.menuSearch) {
             ARouter.getInstance().build("/search/SearchActivity").navigation();
         }
         return super.onOptionsItemSelected(item);
